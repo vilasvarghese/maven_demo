@@ -8,8 +8,9 @@ steps {
 }
     stage('build') {
     steps {
-    def mvnhome = tool name: 'mymaven', type: 'maven'
-    bat "${mvnhome}\\bin\\mvn clean install"
+        withMaven(maven : 'mymaven'){
+        bat "mvn clean install"
+    }
     }
 }
     stage('junit') {
