@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+stage('scm') {
+steps {
+    git 'https://github.com/ganeshlovesdevops/maven_demo.git'
+    }
+}
     stage('build') {
     steps {
     def mvnhome = tool name: 'mymaven', type: 'maven'
