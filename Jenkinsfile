@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent master
     stages {
         stage('scm') {
             steps {
@@ -25,7 +25,7 @@ pipeline {
         steps {
         //bat 'copy "C:\\Program Files (x86)\\Jenkins\\workspace\\raghuproject\\gameoflife-web\\target\\*.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\"'
             
-		    sh 'cp /var/lib/jenkins/workspace/declarativepipeline/target/addressbook.war /opt/tomcat/webapps/'
+		    sh 'cp /var/lib/jenkins/workspace/declarativepipeline/target/*.war /opt/tomcat/webapps/'
         }
     }
 }
