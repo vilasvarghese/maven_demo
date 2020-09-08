@@ -1,8 +1,7 @@
 pipeline {
     agent { label 'master' }
     tools { 
-        maven 'Maven 3.6.0' 
-        jdk 'jdk11' 
+        maven 'mymaven' 
     }
     stages {
 	stage ('Initialize') {
